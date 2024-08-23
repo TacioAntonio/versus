@@ -1,0 +1,92 @@
+.game__zone {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  > .painel {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 12px;
+
+    > .scoreboard {
+      color: #7eb9fd;
+      background-color: rgb(9, 27, 56);
+      text-align: center;
+      padding: 6px;
+      width: 150px;
+
+      @media (min-width: 640px) {
+        width: auto;
+      }
+
+      &:first-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      &:last-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      > .point {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+      }
+
+      > .username {
+        background-color: #0e2447;
+        padding: 4px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  > .game__painel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    flex: 1;
+
+    > .question {
+      pointer-events: none;
+
+      > .img {
+        width: 64px;
+        height: 64px;
+        border-radius: 5px;
+      }
+    }
+
+    > .options {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 20px;
+      column-gap: 50px;
+
+      > .options__block {
+        display: grid;
+        grid-template-columns: 120px 120px;
+        gap: 20px;
+
+        > .option {
+          color: #7eb9fd;
+          background-color: #0e2447;
+          text-align: center;
+          border-radius: 5px;
+          padding: 12px;
+          cursor: pointer;
+          opacity: .8;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

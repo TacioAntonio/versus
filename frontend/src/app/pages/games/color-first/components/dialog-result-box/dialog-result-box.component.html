@@ -1,0 +1,16 @@
+<div class="dialog-result__box">
+  <div class="dialog__content">
+    <h2 class="title">{{ title }}</h2>
+
+    <div class="dialog__score">
+      <p class="text">{{ hostUsername }} :: Points: {{ hostPoints }}</p>
+      <p class="text">{{ partnerUsername }} :: Points: {{ partnerPoints }}</p>
+    </div>
+
+    <div class="background-box">
+      <p class="text">{{ resultIndicator }}</p>
+    </div>
+
+    <button *ngIf="withActionButton" class="btn" (click)="emitActionButton()">{{ actionButtonTitle }}</button>
+  </div>
+</div>

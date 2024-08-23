@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  height: 100vh;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+
+  > .painel {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1;
+
+    &--center {
+      justify-content: center;
+      align-items: center;
+    }
+
+    > .countdown {
+      color: #7eb9fd;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px #0e2447;
+    }
+
+    > .slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 80%;
+      margin: auto;
+      height: 300px;
+
+      > .slider__arrow {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #143364;
+        cursor: pointer;
+
+        &:hover {
+          color: #225bb7;
+        }
+      }
+
+      > .slider__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+
+        > .slider__wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          > .slider__snackbar {
+            position: relative;
+            width: 32px;
+            height: 21px;
+            color: white;
+            background-color: #0e2447;
+            border-radius: 6px;
+            overflow: hidden;
+            padding: 4px;
+            z-index: 1;
+
+            &--invible {
+              background-color: transparent;
+            }
+
+            &:first-child {
+              top: 6px;
+            }
+
+            &:last-child {
+              bottom: 6px;
+            }
+
+            &--left:first-child,
+            &--right:first-child {
+              top: 12px;
+            }
+
+            &--left:last-child,
+            &--right:last-child {
+              bottom: 12px;
+            }
+
+            &--left,
+            &--right {
+              opacity: 0.5;
+              transform: scale(0.8);
+            }
+          }
+
+          > .slider__item {
+            width: 64px;
+            height: 64px;
+            margin: 0 10px;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0d1325;
+            color: white;
+            border-radius: 8px;
+
+            &--center {
+              opacity: 1;
+              transform: scale(1);
+            }
+
+            &--left,
+            &--right {
+              opacity: 0.5;
+              transform: scale(0.8);
+            }
+
+            > .slider__img {
+              width: 100%;
+              height: 100%;
+              border-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.disable {
+  opacity: .5;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+

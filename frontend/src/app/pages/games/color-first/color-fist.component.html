@@ -1,0 +1,27 @@
+<div class="container">
+  @if (showDialogInstructions) {
+    <app-dialog-box
+      [timer]="timerForInstructions"
+      [message]="'This is a game of reflexes! Be the first to hit before your opponent. If you make a mistake, you can try again, but the important thing is to be the quickest to get it right!'"
+    />
+  } @else {
+    @if (resultIndicator) {
+      <app-dialog-result-box
+        [title]="'Score'"
+        [hostPoints]="usersPoints?.host"
+        [partnerPoints]="usersPoints?.partner"
+        [resultIndicator]="resultIndicator"
+        [withActionButton]="withActionButton"
+        [actionButtonTitle]="'Homepage'"
+        (_emitActionButton)="navigateToHome()"
+      />
+    } @else {
+      <app-game-zone
+        [option]="option"
+        [hostPoints]="usersPoints?.host"
+        [partnerPoints]="usersPoints?.partner"
+        (_emitCollectResponse)="collectResponse($event)"
+      />
+    }
+  }
+</div>

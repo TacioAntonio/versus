@@ -1,0 +1,32 @@
+<div class="chat__container">
+  @if (showChat) {
+    <form class="chat__form" (ngSubmit)="onSubmit($event)">
+      <div class="chat__menu">
+        <h2 class="chat__title">Chat</h2>
+        <button class="chat__close" type="button" (click)="handleShowChat()">X</button>
+      </div>
+      <div class="chat__messages">
+        @for (message of messageHistory; track message) {
+          <div class="chat__username-message">
+            <div [ngClass]="['chat__username-container', handleUsernameChatPosition(message['username'])]">
+              <p class="chat__username">{{ message['username'] }}</p>
+            </div>
+
+            <div class="chat__message">
+              <p class="chat__content">{{ message['message'] }}</p>
+            </div>
+          </div>
+        }
+      </div>
+      <input class="chat__input" placeholder="Type your message..." [formControl]="message" />
+      <button class="chat__submit" type="submit">Send</button>
+    </form>
+  } @else {
+    <div class="chat__toggle-container" *ngIf="isRoomJoinedValid">
+      <div *ngIf="countNotifications > 0" class="chat__notification">{{ countNotifications }}</div>
+      <div class="chat__toggle" (click)="handleShowChat()">
+        <img class="chat__toggle-icon" src="../../../../../../../assets/icons/chats.png" alt="Toggle chat" />
+      </div>
+    </div>
+  }
+</div>

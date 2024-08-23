@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="snackbar">{{ hostUsername }}</div>
+  @if (partnerUsername) {
+    <p class="text">Enemy found</p>
+    <div class="snackbar">{{ partnerUsername }}</div>
+  } @else {
+    <p class="text">Waiting enemy<span class="dots"></span></p>
+  }
+</div>

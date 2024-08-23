@@ -1,0 +1,81 @@
+.container {
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+
+  > .snackbar {
+    min-width: 250px;
+    color: #fff;
+    background-color: #0e2447;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+
+    &--username {
+      position: fixed;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -10%); // translate(x, y)
+      animation: slideIn 2s forwards, swing 1s 1s forwards;
+    }
+
+    &__warning--disconnectBy {
+      position: fixed;
+      bottom: 10%;
+      left: 50%;
+      transform: translate(-50%, -10%);
+      opacity: .5;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+
+  > .btn {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &__battle {
+      color: #7eb9fd;
+      background-color: #0e2447;
+      transition: opacity .5s ease;
+      opacity: .5;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+        background: linear-gradient(90deg, rgba(14,14,71,1) 0%, rgba(14,30,71,1) 35%, rgba(14,29,71,1) 100%);
+      }
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 10%;
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: translate(-50%, -10%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -10%) rotate(10deg);
+  }
+  100% {
+    transform: translate(-50%, -10%) rotate(0deg);
+  }
+}

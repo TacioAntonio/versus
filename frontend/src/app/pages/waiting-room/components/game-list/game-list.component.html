@@ -1,0 +1,27 @@
+<div class="container">
+  <p class="countdown" *ngIf="!showGameList">{{ timer | async }}</p>
+
+  @if(showGameList) {
+    <div class="slider" [ngClass]="{ 'disable': isDisabledGameList }">
+      <button class="slider__arrow slider__arrow--left" (click)="prevSlide()">&#10094;</button>
+
+      <div class="slider__container">
+        @for(direction of directions; track direction) {
+          @if (currentGames[direction]) {
+            <app-game-item
+              [showPartnerSliderSnackbar]="currentGames[direction]['showPartnerSliderSnackbar']"
+              [showHostSliderSnackbar]="currentGames[direction]['showHostSliderSnackbar']"
+              [currentGameName]="currentGames[direction]['gameName']"
+              [currentGameIcon]="currentGames[direction]['gameIcon']"
+              [currentGameUrl]="currentGames[direction]['gameUrl']"
+              [sliderSnackbarDirection]="currentGames[direction]['direction']"
+              (emitGameNameEvent)="handleEmitGameName($event)"
+            />
+          }
+        }
+      </div>
+
+      <button class="slider__arrow slider__arrow--right" (click)="nextSlide()">&#10095;</button>
+    </div>
+  }
+</div>

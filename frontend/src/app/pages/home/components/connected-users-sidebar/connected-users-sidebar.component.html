@@ -1,0 +1,20 @@
+<div class="container">
+  <div *ngIf="isVisible" class="sidebar">
+    <header class="header">
+      <h3 class="title">{{ title }}</h3>
+      <button class="btn" (click)="isVisible = false">X</button>
+    </header>
+    <hr *ngIf="title" class="line" />
+    <ul class="list">
+      <li class="list__item" *ngFor="let connectedUser of connectedUsers">{{connectedUser}}</li>
+    </ul>
+  </div>
+
+  <button
+    *ngIf="!isVisible"
+    class="btn"
+    (click)="isVisible = true"
+  >
+    <img class="image" src="../../../../../assets/icons/users.png" />
+  </button>
+</div>

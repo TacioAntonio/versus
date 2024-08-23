@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Kode Mono Regular';
+  src: url('./assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kode Mono Regular', sans-serif;
+}
+
+html, body {
+	font-size: 100%;
+	line-height: 1;
+  background-color: #03051d;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

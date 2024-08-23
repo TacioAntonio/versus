@@ -1,0 +1,32 @@
+<div class="slider__wrapper">
+  @if(showPartnerSliderSnackbar) {
+    <div class="slider__snackbar slider__snackbar--{{ sliderSnackbarDirection }}">{{ partnerUsername }}</div>
+  } @else {
+    <div class="slider__snackbar slider__snackbar--{{ sliderSnackbarDirection }} slider__snackbar--invible"></div>
+  }
+  <div class="slider__item slider__item--{{ sliderSnackbarDirection }}">
+    @if(checkDirection(sliderSnackbarDirection)) {
+      <img
+        tabindex="0"
+        class="slider__img"
+        [src]="currentGameIcon"
+        [alt]="currentGameName"
+        [title]="currentGameName"
+        (click)="emitGameName(currentGameUrl)"
+      />
+    } @else {
+      <img
+        tabindex="0"
+        class="slider__img"
+        [src]="currentGameIcon"
+        [alt]="currentGameName"
+        [title]="currentGameName"
+      />
+    }
+  </div>
+  @if(showHostSliderSnackbar) {
+    <div class="slider__snackbar slider__snackbar--{{ sliderSnackbarDirection }}">{{ hostUsername }}</div>
+  } @else {
+    <div class="slider__snackbar slider__snackbar--{{ sliderSnackbarDirection }} slider__snackbar--invible"></div>
+  }
+</div>

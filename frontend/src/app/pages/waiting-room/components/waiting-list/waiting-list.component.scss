@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  > .text {
+    color: #7eb9fd;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-wrap: wrap;
+
+    > .dots {
+      &::after {
+        content: '';
+        animation: dotAnimation 3s infinite;
+      }
+    }
+  }
+
+  > .snackbar {
+    min-width: 250px;
+    color: #fff;
+    background-color: #0e2447;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+  }
+}
+
+@keyframes dotAnimation {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+}

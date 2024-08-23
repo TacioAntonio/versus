@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="snackbar snackbar--username">{{ hostUsername }}</div>
+  <div *ngIf="showDisconnectionWarning" class="snackbar snackbar__warning--disconnectBy">You were disconnected because your opponent left the room.</div>
+  <button class="btn btn__battle" (click)="emitJoinRoom()">Search for match</button>
+
+  <app-connected-user-sidebar
+    [title]="'Connected users'"
+    [connectedUsers]="connectedUsers">
+  </app-connected-user-sidebar>
+</div>

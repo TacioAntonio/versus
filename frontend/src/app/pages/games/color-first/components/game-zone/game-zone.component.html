@@ -1,0 +1,40 @@
+<div class="game__zone">
+  <div class="painel">
+    <div class="scoreboard">
+      <p class="point">{{ hostPoints }}</p>
+      <div class="username">
+        <p class="text">{{ hostUsername }}</p>
+      </div>
+    </div>
+
+    <div class="scoreboard">
+      <p class="point">{{ partnerPoints }}</p>
+      <div class="username">
+        <p class="text">{{ partnerUsername }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="game__painel">
+    <div class="question">
+      <img class="img" [src]="option?.question?.image" [alt]="option?.question?.response">
+    </div>
+
+    <div class="options">
+      <div class="options__block">
+        @for(item of option?.options | slice:0:2; track item) {
+        <div class="option" (click)="emitCollectResponse(item)">
+          <p class="text">{{ item }}</p>
+        </div>
+        }
+      </div>
+      <div class="options__block">
+        @for(item of option?.options | slice:2:4; track item) {
+        <div class="option" (click)="emitCollectResponse(item)">
+          <p class="text">{{ item }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
